@@ -1,6 +1,12 @@
 [package]
 name = "peek-trait"
 version = "0.1.0"
+rust-version = "1.85.1"
+description = "Zero-cost iterator peeking"
+repository = "https://github.com/mysteriouslyseeing/peek-trait"
+license = "MIT"
+keywords = ["iterator", "peek", "peekable", "lookahead", "double-ended"]
+categories = ["rust-patterns", "algorithms"]
 edition = "2024"
 
 [dependencies]
