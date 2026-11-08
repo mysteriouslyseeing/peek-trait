@@ -2,6 +2,22 @@
 #![deny(missing_docs)]
 //! Provides several traits for peeking ahead of iterators. In particular, see [`Peek`],
 //! [`PeekNth`], [`PeekBack`], and [`PeekNthBack`].
+//!
+//! # Examples
+//! ```
+//! use peek_trait::{Peek, PeekNth};
+//!
+//! let mut it = 0..5;
+//! assert_eq!(it.peek_nth(2), Some(2));
+//! assert_eq!(it.next(), Some(0));
+//!
+//! // Some iterators allow modifying peeked values
+//! let mut it = vec!["a".to_string(), "b".to_string()].into_iter();
+//! if let Some(first) = it.peek() {
+//!     first.push('!');
+//! }
+//! assert_eq!(it.next().as_deref(), Some("a!"));
+//! ```
 
 mod impls;
 mod with;
